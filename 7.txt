@@ -1,0 +1,56 @@
+1. Open docker.desktop app
+  - Go to settings -> Kubernetes
+  - Enable Kubernetes
+  - 'Apply & Install'
+
+2. Open Terminal : 
+  - minikube version
+    [If not installed : 
+    curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    sudo install minikube-linux-amd64 /usr/local/bin/minikube]
+  - minikube start --driver = docker
+  - kubectl get nodes
+
+3.In Main folder
+  - Create app.py
+  - Create requirement.txt(flask, numpy)
+  - Create Dockerfile
+
+4. On Terminal :
+  - eval $(minikube docker-env)
+  - docker build -t folder_name .
+  - minikube dashboard
+
+5. In Minikube dashboard, press on '+' on right top corner
+  - Create Yaml file and upload
+
+6. Check pods
+
+7. Repeat step 5 with service yaml code
+
+8. On Terminal : 
+      minikube service ai-model-service
+
+9. Open Minikube Dashboard
+  - Go to deployment
+  - Go to '.-.-.' on top right corner
+  - change desired replicas from 2 to 5
+
+10. Open Pods
+
+11. app.py
+from flask import Flask, request, jsonify
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+  return "AI Model Running Successfully"
+  
+@app.route('/predict', methods=['POST'])
+def predict():
+  data = request.json['number']
+  result = data * 2
+  return jsonify({'result': result})
+
+if __name__ == "__main__":
+  app.run(host="0.0.0.0", port=5000)
