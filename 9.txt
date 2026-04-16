@@ -1,0 +1,36 @@
+1. In new folder create add.py
+
+2. Create new repo in Github and copy repo link
+
+3. On Terminal 
+    git init
+    git add .
+    git commit -m "Initial commit"
+    git branch -M main
+    git remote add origin Repo_URL
+    git push -u origin main
+    pwd
+    sudo chown -R jenkins:jenkins /home/admin1/folder_name
+
+4. Open Jenkins with localhost:8080
+  - Create item 'add'
+  - Freestyle Project
+  - Triggers = 'Poll SCM'
+    Schedule : 
+        H/1 * * * *
+  - Build steps -> Execute Shell
+      cd /home/admin1/folder_name <---------(get this path by entering pwd on terminal)
+      python3 add.py
+      git pull
+      echo "Build Successful"
+  - Save
+  - Click 'Build Now'
+  - Console output
+
+Now changes made in file and commited in github are reflected in the build automatically
+
+5. add.py :
+
+a = 10
+b = 20
+print(a+b)
