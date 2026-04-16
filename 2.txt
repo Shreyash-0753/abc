@@ -1,0 +1,52 @@
+mkdir feature_branch
+cd feature_branch
+git init 
+git config --global user.name "Shreyash-0753"
+git config --global user.email "shreyashnpawar12@gmail.com"
+git branch -M main
+touch proj.txt
+git add .
+git commit -m "Initial commit"
+
+git checkout -b feature_frontend
+touch frontend.txt
+git add .
+git commit -m "Added frontend module"
+
+git checkout main
+
+git checkout -b feature_backend
+touch backend.txt
+git add .
+git commit -m "Added backend module"
+
+git checkout main
+
+git merge feature_frontend
+git merge feature_backend
+git branch 
+
+git remote add origin "Repo link"
+git remote -v
+
+git push -u origin main --force
+git push origin feature_frontend
+git push origin feature_backend
+
+git checkout -b feature_conflict
+echo "Sample models to be trained for project" > proj.txt
+
+git add .
+git commit -m "Conflict branch change"
+
+git checkout main
+
+echo "main version of the project" > proj.txt
+git add .
+git commit -m "Main branch change"
+
+git merge feature_conflict
+nano proj.txt
+
+git add proj.txt
+git commit -m "Resolved Conflicts"
