@@ -1,0 +1,87 @@
+🧩 STEP 1: Fork an AI Project
+Go to GitHub
+Search for a simple AI repo (e.g., “machine learning python”, “NLP project”)
+Open any repository
+Click Fork (top-right)
+
+👉 Now the repo is copied to your account
+
+💻 STEP 2: Clone in GitHub Desktop
+Open GitHub Desktop
+Click File → Clone Repository
+Select your forked repo (from GitHub.com tab)
+Click Clone
+
+👉 Project is now on your system
+
+🌿 STEP 3: Create Feature Branch
+Click Current Branch (top bar)
+Click New Branch
+Enter name:
+feature-update
+Click Create Branch
+
+👉 You are now working separately from main
+
+✏️ STEP 4: Make Changes
+Open project in Visual Studio Code
+Make small changes, for example:
+Add comments
+Improve code
+Add print statement
+Fix small bug
+
+👉 Save the file
+
+💾 STEP 5: Commit Changes
+
+Back in GitHub Desktop:
+
+You’ll see changed files
+Write commit message:
+Improved code and added feature
+Click Commit to feature-update
+☁️ STEP 6: Push Branch
+
+Click:
+👉 Push origin
+
+🔁 STEP 7: Create Pull Request
+Click Create Pull Request
+Browser opens on GitHub
+Click Create Pull Request again
+
+👉 PR is sent to original repository
+
+⚠️ STEP 8: Resolve Merge Conflicts (if any)
+
+If conflict occurs:
+
+In GitHub Desktop:
+It shows “Conflicts”
+Click Open in VS Code
+In Visual Studio Code you will see:
+<<<<<<< HEAD
+your code
+=======
+other code
+>>>>>>> main
+Fix it:
+Keep correct code OR combine both
+Delete:
+<<<<<<< ======= >>>>>>>
+Save file
+Finish in GitHub Desktop:
+Click Mark as resolved
+Click Commit merge
+Click Push origin
+🔄 STEP 9: PR gets updated
+Your Pull Request is updated automatically
+Reviewer can now accept it
+🧠 Viva Explanation (very important)
+Fork → Copy of repository
+Branch → Separate working version
+Commit → Save changes
+Push → Upload to GitHub
+Pull Request → Request to merge
+Conflict → When same file edited differently
