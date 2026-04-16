@@ -1,0 +1,34 @@
+1. sudo systemctl start jenkins
+
+2. localhost:8080
+
+3. create new item
+  - enter item name (Addition)
+  - Freestyle Project
+  
+4. In source code management select Git
+  - Create repo in github
+  - Add py file(addition.py)
+  - Copy repo URL
+  - Paste Url in Jenkins
+  - Change branch specifier from */master to */main
+  - In Triggers, select 'github hook trigger for GITscm'
+  - Add Build steps  Execute shell
+     echo "Build Started"
+     python3 addition.py
+     echo("Build Finished")
+  - Save
+  
+5. In github's repo, go to settings
+   - Go to webhooks
+   - Click add Webhook
+   - Open terminal and enter ip addr
+   - Copy ip address after inet (inet 172.16.5.102)
+   - In webhook settings, type URL in payload URL
+      https://copied_IP_address[172.16.5.102]/Item_name[Addition]/
+   - Select content type as application/json
+   - 'Add webhook'
+
+6. Open Jenkins
+  - Click 'Build Now'
+  - When done, open console Output
