@@ -1,0 +1,29 @@
+1.git config --global user.name "Your Name"
+  git config --global user.email "Your.email@example.com"
+
+2.mkdir my_data_science_project
+  cd my_data_science_project
+  mkdir sample.py
+  nano sample.py
+  python3 sample.py
+
+3.git init
+
+4. echo "# My Data Science Project" > README.md
+  touch .gitignore
+
+5.git add .
+  git commit -m "Initial commit: Added sample code"
+
+6.Create a new repository on GitHub (do not initialize with README).
+
+7.git remote add origin https://github.com/username/repository.git
+  git branch -M main
+  git push -u origin main
+
+8.git remote -v
+
+9.Create analysis.py, commit, and push changes.
+
+10.git log --oneline
+  git status
